@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const path = require("path");
 const express = require("express");
-const app = express();\
+const app = express();
 
 // ===== Rutas =====
 const authRoutes   = require("./routes/authRoutes");
@@ -54,6 +54,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Servidor escuchando en http://localhost:${PORT}`);
 });
+
 
 
 
