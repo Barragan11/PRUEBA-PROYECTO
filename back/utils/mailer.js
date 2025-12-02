@@ -132,6 +132,7 @@ async function sendPasswordResetEmail({ to, nombre, token }) {
     html,
   });
 }
+console.log("BREVO_API_KEY (Render):", process.env.BREVO_API_KEY ? "CARGADA" : "VACÍA");
 
 module.exports = {
   sendOrderEmail,
@@ -139,3 +140,4 @@ module.exports = {
   sendWelcomeEmail,
   sendPasswordResetEmail,
 };
+
