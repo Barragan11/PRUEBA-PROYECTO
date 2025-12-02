@@ -3,6 +3,8 @@ require("dotenv").config();
 
 const path = require("path");
 const express = require("express");
+const app = express();
+
 app.use(cors({
   origin: [
     "https://astro-motors-uaa2025.netlify.app",
@@ -21,8 +23,6 @@ const statsRoutes  = require("./routes/statsRoutes");  // admin: gráficas / rep
 const contactRoutes = require("./routes/contactRoutes");
 
 const { errorHandler } = require("./middleware/errorMiddleware");
-
-const app = express();
 
 // ===== Middlewares globales =====
 app.use(cors());
@@ -57,4 +57,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Servidor escuchando en http://localhost:${PORT}`);
 });
+
 
