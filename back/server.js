@@ -3,7 +3,13 @@ require("dotenv").config();
 
 const path = require("path");
 const express = require("express");
-const cors = require("cors");
+app.use(cors({
+  origin: [
+    "https://astro-motors-uaa2025.netlify.app",
+  ],
+  credentials: true,
+}));
+
 
 // ===== Rutas =====
 const authRoutes   = require("./routes/authRoutes");
@@ -51,3 +57,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Servidor escuchando en http://localhost:${PORT}`);
 });
+
